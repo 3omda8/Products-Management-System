@@ -137,6 +137,27 @@ function updateForm(i) {
 
   addBotn.classList.add("d-none");
   updateBotn.classList.remove("d-none");
+  // remove valid and invalid classes
+  productName.classList.remove("is-invalid");
+  productName.classList.remove("is-valid");
+  productPrice.classList.remove("is-invalid");
+  productPrice.classList.remove("is-valid");
+  productCategory.classList.remove("is-invalid");
+  productCategory.classList.remove("is-valid");
+  productDesc.classList.remove("is-invalid");
+  productDesc.classList.remove("is-valid");
+
+  // remove error messages
+  validNameError.classList.add("d-none");
+  validPriceError.classList.add("d-none");
+  validCatError.classList.add("d-none");
+  validDesError.classList.add("d-none");
+
+  // remove empty error messages
+  emptyNameError.classList.add("d-none");
+  emptyPriceError.classList.add("d-none");
+  emptyCatError.classList.add("d-none");
+  emptyDesError.classList.add("d-none");
 }
 
 function setUpdate() {
@@ -146,6 +167,27 @@ function setUpdate() {
   productList[globalIndex].description = productDesc.value;
   addBotn.classList.remove("d-none");
   updateBotn.classList.add("d-none");
+  // remove valid and invalid classes
+  productName.classList.remove("is-invalid");
+  productName.classList.remove("is-valid");
+  productPrice.classList.remove("is-invalid");
+  productPrice.classList.remove("is-valid");
+  productCategory.classList.remove("is-invalid");
+  productCategory.classList.remove("is-valid");
+  productDesc.classList.remove("is-invalid");
+  productDesc.classList.remove("is-valid");
+
+  // remove error messages
+  validNameError.classList.add("d-none");
+  validPriceError.classList.add("d-none");
+  validCatError.classList.add("d-none");
+  validDesError.classList.add("d-none");
+
+  // remove empty error messages
+  emptyNameError.classList.add("d-none");
+  emptyPriceError.classList.add("d-none");
+  emptyCatError.classList.add("d-none");
+  emptyDesError.classList.add("d-none");
   saveToLocalStorage();
   display(productList);
   clearInputs();
