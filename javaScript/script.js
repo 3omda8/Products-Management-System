@@ -198,7 +198,7 @@ function validProductName() {
 }
 
 function validProductPrice() {
-  var regex = /^[1-7][0-9]{4}|80000$/;
+  var regex = /^([1-7][0-9]{4}|80000)$/;
   if (regex.test(productPrice.value)) {
     console.log("match");
     validPriceError.classList.add("d-none");
