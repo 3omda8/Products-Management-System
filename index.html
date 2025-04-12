@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-perimitive</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="w-75 mx-auto py-5">
+        <h1 class="text-primary fw-bolder text-center mb-5">
+          Product Management System
+        </h1>
+        <div class="form-floating mb-3">
+          <input
+            oninput="validProductName()"
+            type="text"
+            class="form-control"
+            id="productName"
+          />
+          <label for="productName">Product Name</label>
+        </div>
+        <div id="validNameError" class="alert alert-danger text-center d-none">
+          Name Must Start With Capital Letter & at least 4 letters
+        </div>
+        <div id="emptyNameError" class="alert alert-primary text-center d-none">
+          Can't add Empty Product Name
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            oninput="validProductPrice()"
+            type="Number"
+            class="form-control"
+            id="productPrice"
+          />
+          <label for="productPrice">Product Price</label>
+        </div>
+        <div id="validPriceError" class="alert alert-danger text-center d-none">
+          Price Must be between 10,000 - 80,000
+        </div>
+        <div
+          id="emptyPriceError"
+          class="alert alert-primary text-center d-none"
+        >
+          Can't add Product with no price.
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            list="catList"
+            type="text"
+            class="form-control"
+            id="productCat"
+            oninput="validProductCat()"
+          />
+          <label for="productCat">Category</label>
+          <datalist id="catList">
+            <option>Electronics</option>
+            <option>Tv</option>
+            <option>Tablet</option>
+            <option>Phone</option>
+          </datalist>
+        </div>
+        <div id="validCatError" class="alert alert-danger text-center d-none">
+          You should choose a category from the list
+        </div>
+        <div id="emptyCatError" class="alert alert-primary text-center d-none">
+          Can't add Product with no category.
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            oninput="validProductDes()"
+            class="form-control"
+            id="description"
+          ></textarea>
+          <label for="description">Description</label>
+        </div>
+        <div id="validDesError" class="alert alert-danger text-center d-none">
+          You should write from 10 to 100 characters.
+        </div>
+        <div id="validDescError" class="alert alert-danger text-center d-none">
+          You exceed number of characters.
+        </div>
+        <div id="emptyDesError" class="alert alert-primary text-center d-none">
+          Can't add Product with no description.
+        </div>
+        <div class="form-floating mb-3">
+          <input type="file" class="form-control" id="productImg" />
+          <label for="productImg">Image</label>
+        </div>
+
+        <button
+          id="botn-a"
+          class="btn btn-outline-primary"
+          onclick="addProduct()"
+        >
+          Add Product
+        </button>
+        <button
+          id="botn-u"
+          class="btn btn-outline-warning d-none"
+          onclick="setUpdate()"
+        >
+          Update
+        </button>
+      </div>
+      <div class="w-75 mx-auto">
+        <h4 class="text-primary text-start">Search Products</h4>
+        <div class="form-floating mb-3">
+          <input
+            oninput="searchProduct()"
+            type="search"
+            class="form-control"
+            id="searchProducts"
+          />
+          <label for="searchProducts">Search Products</label>
+        </div>
+      </div>
+      <div class="w-75 mx-auto">
+        <h4 class="text-primary text-start">Search Category</h4>
+        <div class="form-floating mb-3">
+          <input
+            oninput="searchCat()"
+            type="search"
+            class="form-control"
+            id="searchCategory"
+          />
+          <label for="searchCategory">Search Category</label>
+        </div>
+      </div>
+      <div class="w-75 mx-auto">
+        <h2 class="text-success text-center">Available Products</h2>
+        <div class="row" id="row"></div>
+      </div>
+    </div>
+    <script src="./javaScript/bootstrap.bundle.min.js"></script>
+    <script src="./javaScript/script.js"></script>
+  </body>
+</html>
